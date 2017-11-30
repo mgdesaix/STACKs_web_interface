@@ -177,12 +177,103 @@ Save and exit.  Now check it out in your browser:
 ```
 http://localhost/~username/phpinfo.php    # change username
 ```
+![](https://raw.githubusercontent.com/mgdesaix/Stacks_web_interface/master/media/PHP.png)
+
+## MySQL
+
+MySQL is the database system used for the web interface and it is not provided with High Sierra, but you can [download it here](https://dev.mysql.com/downloads/mysql/).  When it asks you to 'Login' or 'Sign Up' you can click the 'No thanks, just start my download' at the bottom.  Go through the installation and make sure to COPY down the password they give you!!!
+
+<img src="https://raw.githubusercontent.com/mgdesaix/Stacks_web_interface/master/media/MySQL_password.png" width="550" height="400">
+
+Once you have MySQL installed, start it up in terminal
+```
+$ sudo /usr/local/mysql/support-files/mysql.server start
+```
+
+In order to use commands from newly installed programs you need to edit your shell startup script, the **.bash_profile**, to point toward the scripts provided by the new program instead of having to provide the full path everytime you wish to use them.  In this instance, MySQL downloads scripts here: `/usr/local/mysql/bin` and you will enable the **.bash_profile** to find them.
+```
+$ cd
+$ sudo nano .bash_profile
+```
+And add this line
+```
+export PATH="$PATH:/usr/local/mysql/bin"
+```
+Save and exit. Enter command:
+```
+$ source .bash_profile
+```
+The scripts provided by MySQL can now be read whenever you open a new shell. Ok, now let's change the temporary password that was provided on installation. Enter into the terminal:
+
+```
+$ mysql -u root -p
+#(enter the temporary password)
+```
+MySQL is open and says "Welcome to the MySQL monitor...".
+Now enter the following and set a new password:
+```
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('the_password_you_set');
+```
+Quit with:
+```
+\q
+```
+Edit the MySQL configuration file with your user information:
+```
+$ cd /usr/local/share/stacks/sql/
+$ sudo cp mysql.cnf.dist mysql.cnf
+$ sudo nano /usr/local/share/stacks/sql/mysql.cnf
+```
+And change to your database username and password:
+```
+user=mdesaix               #your_username
+password=my_password       # your_password 
+host=localhost
+port=3306
+```
+Then log back into mysql and grant access to the user information you set in mysql.cnf:
+```
+$ mysql -u root -p
+```
+```
+GRANT ALL ON *.* TO 'mdesaix'@'localhost' IDENTIFIED BY 'my_password';
+\q
+```
+Then we need to allow PHP to access the MySQL database by editing the PHP configuration file, **constants.php.dist**. You will provide the database username and password, and you will also the $$mysql_bin$ from "/usr/bin/mysql" to "/usr/local/mysql/bin/mysql".
+```
+sudo cp /usr/local/share/stacks/php/constants.php.dist /usr/local/share/stacks/php/constants.php
+sudo nano /usr/local/share/stacks/php/constants.php
+```
+
+```
+// Credentials to access Stacks MySQL databases
+//
+$db_user     = "mdesaix";
+$db_pass     = "my_password";
+$db_host     = "localhost";
+
+//
+// Path to the MySQL client program
+//
+$mysql_bin = "/usr/local/mysql/bin/mysql";
+```
+Alright, lastly you need to fix a socket error because MySQL places the socket in "/tmp" and OSX is looking for it in "/var/mysql".
+
+```
+sudo mkdir /var/mysql
+sudo ln -s /tmp/mysql.sock /var/mysql/mysql.sock
+```
+### Intermission
+Breathe. If you've had no problems this far, that's awesome.  If you've had some, that's normal.
+
+## phpMyAdmin
 
 
+## PEAR tools
 
+## Perl modules
 
+## Upload Stacks output
 
-
-
-
+## Finished!
 
