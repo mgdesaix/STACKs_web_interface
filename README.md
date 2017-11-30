@@ -154,7 +154,7 @@ Save and exit (Ctl-O, enter, Ctl-x)
 Restart Apache and it is good to go
 
 ```
-sudo apachectl restart
+$ sudo apachectl restart
 ```
 
 ## PHP
