@@ -1,10 +1,10 @@
 # Setting up the Stacks web interface
 
-Recently I got the STACKs web-based interface set up and introduced myself to Apache, PHP, and MySQL in the process...which ended up being a long, time-consuming process.  In the hopes of shortening the time it takes others to go through this setup, here's the steps I took to make it work on Mac OSx High Sierra.  If you haven't worked in Terminal before be careful, you can ruin everything pretty easily.
+Recently I got the STACKs web-based interface set up and introduced myself to Apache, PHP, and MySQL in the process...which ended up being a long, time-consuming process.  In the hopes of shortening the time it takes others to go through this setup, here's the steps I took to make it work on macOS High Sierra.  If you haven't worked in Terminal before be careful, you can ruin everything pretty easily.
 
 ## Apache
 
-Apache is already installed on Mac OSx and you can open it from Terminal.  Many of the commands throughout these steps will require `sudo` in order to bypass the restrictions on the directories being accessed, so make sure you have the admin password.  To start, stop, and restart Apache all you do is the following:
+Apache is already installed on your mac and you can open it from Terminal.  Many of the commands throughout these steps will require `sudo` in order to bypass the restrictions on the directories being accessed, so make sure you have the admin password.  To start, stop, and restart Apache all you do is the following:
 
 ```
 $ sudo apachectl start
