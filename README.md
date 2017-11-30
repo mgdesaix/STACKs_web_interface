@@ -1,2 +1,2 @@
 # STACKs_web_interface
-setting up STACKs on High Sierra
+setting up STACKs web interface on High Sierra
