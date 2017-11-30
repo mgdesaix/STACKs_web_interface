@@ -159,7 +159,24 @@ $ sudo apachectl restart
 
 ## PHP
 
+PHP is already on your Mac and you enabled it in the step above by uncommenting $LoadModule php7_module libexec/apache2/libphp7.so$.
 
+Let's test PHP. Go to $~/Sites/$ and create a PHP file
+```
+$ cd ~/Sites/
+$ sudo nano ./phpinfo.php
+```
+Within this file add:
+```
+<?php
+phpinfo();
+?>
+```
+Save and exit.  Now check it out in your browser:
+
+```
+http://localhost/~username/phpinfo.php    # change username
+```
 
 
 
