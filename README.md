@@ -1,6 +1,5 @@
-# STACKs_web_interface
+# STACKs Web Interface
 setting up STACKs web interface on High Sierra
-
 
 
 Recently I got the STACKs web-based interface set up and introduced myself to Apache, PHP, and MySQL in the process...which ended up being a long, time-consuming process.  In the hopes of shortening the time it takes others to go through this setup, here's the steps I took to make it work on Mac OSx High Sierra.  If you haven't worked in Terminal before be careful, you can ruin everything pretty easily.
