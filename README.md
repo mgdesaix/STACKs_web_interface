@@ -488,6 +488,7 @@ You should see
 If you need help see:
 
 Thierry Gosselin's [awesome tutorial](http://gbs-cloud-tutorial.readthedocs.io/en/latest/09_stacks_web_interface.html)
+
 Set up a [local host on High Sierra](https://websitebeaver.com/set-up-localhost-on-macos-high-sierra-apache-mysql-and-php-7-with-sslhttps)
 
 Stacks [Google User Group](https://groups.google.com/forum/#!forum/stacks-users)
