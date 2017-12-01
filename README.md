@@ -2,7 +2,7 @@ Recently I got the Stacks web-based interface set up and introduced myself to Ap
 
 ## Apache
 
-Apache is already installed on your mac and you can open it from Terminal.  Many of the commands throughout these steps will require `sudo` in order to bypass the restrictions on the directories being accessed, so make sure you have the admin password.  To start, stop, and restart Apache all you do is the following:
+[Apache](https://httpd.apache.org/) is already installed on your mac and you can open it from Terminal.  Many of the commands throughout these steps will require `sudo` in order to bypass the restrictions on the directories being accessed, so make sure you have the admin password.  To start, stop, and restart Apache all you do is the following:
 
 ```
 $ sudo apachectl start
@@ -280,7 +280,7 @@ $ mkdir ~/Sites/phpmyadmin/config                             # make configurati
 $ chmod o+w ~/Sites/phpmyadmin/config                       # to change the permissions
 ```
 ### Note: if you don't have $wget$...
-Then you need Homebrew. Check if you have Homebrew
+Then you need [Homebrew](https://brew.sh/). Check if you have Homebrew
 ```
 $ brew help
 ```
@@ -485,3 +485,10 @@ You should see
 
 ## Finished!
 
+If you need help see:
+
+Thierry Gosselin's awesome tutorial: http://gbs-cloud-tutorial.readthedocs.io/en/latest/09_stacks_web_interface.html
+Set up a local host on High Sierra: https://websitebeaver.com/set-up-localhost-on-macos-high-sierra-apache-mysql-and-php-7-with-sslhttps
+Stacks Google User Group: https://groups.google.com/forum/#!forum/stacks-users
+
+Good luck!
